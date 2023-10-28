@@ -4,14 +4,7 @@ import cart from "../assets/images/cart.png";
 
 
 
-function NotificationBubble() {
-  const { message, position, color } = props;
-  return (
-    <div className={`bg-${color} p-2 rounded-lg`}>
-      <p>{message}</p>
-    </div>
-  );
-}
+
 
 const NavBar = () => {
   return (
@@ -63,11 +56,6 @@ const NavBar = () => {
               <a href="#">
                 Carrito
                 <img src={cart} alt="carrito" />
-                <NotificationBubble
-                  message="¡Nueva notificación!"
-                  position="top-right"
-                  color="red"
-                />
               </a>
             </li>
           </ul>
