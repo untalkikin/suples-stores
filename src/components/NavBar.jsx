@@ -3,7 +3,14 @@ import brand from "../assets/images/Suples.png";
 import cart from "../assets/images/cart.png";
 
 
-
+const CartWidget = () => {
+  return(
+  <a href="#">
+    Carrito
+    <img src={cart} alt="carrito" />
+  </a>
+  );
+};
 
 
 const NavBar = () => {
@@ -53,10 +60,7 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           <ul className="flex items-center gap-1 py-2 text-lg">
             <li className="px-6 hover:text-cyan-600">
-              <a href="#">
-                Carrito
-                <img src={cart} alt="carrito" />
-              </a>
+              <CartWidget />   
             </li>
           </ul>
         </div>
