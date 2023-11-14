@@ -1,6 +1,9 @@
 import React, {useEffect, useState} from 'react'
 import NavBar from './components/NavBar'
 import ItemListContainers from './components/ItemListContainer'
+import Home from './components/Home'
+import Nosotros from './components/Nosotros'
+import Footer from './components/Footer'
 
 function App() {
   
@@ -35,6 +38,9 @@ function App() {
   return (
     <>
      <NavBar />
+     <Home />
+     <Nosotros />
+     <Footer />
      <ItemListContainers greeting={'Hola mundo'}/>
      {
       productos.map((p)=>{
