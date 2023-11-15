@@ -39,8 +39,6 @@ function App() {
     <>
      <NavBar />
      <Home />
-     <Nosotros />
-     <Footer />
      <ItemListContainers greeting={'Hola mundo'}/>
      {
       productos.map((p)=>{
