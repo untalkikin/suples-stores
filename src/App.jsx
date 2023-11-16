@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import ItemListContainers from './components/ItemListContainer'
 import Home from './components/Home'
 import Nosotros from './components/Nosotros'
-import Footer from './components/Footer'
 
 function App() {
   
@@ -36,22 +36,18 @@ function App() {
 
 
   return (
-    <>
-     <NavBar />
-     <Home />
-     <ItemListContainers greeting={'Hola mundo'}/>
-     {
-      productos.map((p)=>{
-        return(
-          <div key={p.id}>
-            <h2>Producto : {p.titlo}</h2>
-            <h4> $ {p.precio}</h4>
-          </div>
-        )
-      })
-     }
-    </>
-  )
+    <Router>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Nosotros" element={<Nosotros />} />
+        <Route
+          path="/Contenedor"
+          element={<ItemListContainers greeting={"Hola mundo"} />}
+        />
+      </Routes>
+    </Router>
+  );
 }
 
 export default App;
