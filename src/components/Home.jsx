@@ -1,6 +1,5 @@
 import React from 'react'
 import strongMan from "../assets/images/cbum.png"
-import Nosotros from './Nosotros'
 import Footer from './Footer'
 
 
@@ -30,7 +29,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <Nosotros />
       <Footer />
     </>
   );

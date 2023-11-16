@@ -1,6 +1,7 @@
 import React from "react";
 import brand from "../assets/images/Suples.png";
 import cart from "../assets/images/cart.png";
+import { Outlet, Link, useLocation } from 'react-router-dom'
 
 
 const CartWidget = () => {
@@ -13,6 +14,9 @@ const CartWidget = () => {
 };
 
 const NavBar = () => {
+
+  const location = useLocation();
+
   return (
     <nav className="bg-white/60  text-gray-900">
       <div className="flex items-center justify-between">
@@ -31,14 +35,18 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           <ul className="flex items-center gap-1 py-2 text-lg">
             <li className="px-6 hover:text-cyan-600">
-              <a href="#">Inicio</a>
+              <Link 
+                        className={`${location.pathname === '/' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} 
+                        to="/">Inicio</Link>
             </li>
           </ul>
         </div>
         <div className="flex items-center justify-between">
           <ul className="flex items-center gap-1 py-2 text-lg">
             <li className="px-6 hover:text-cyan-600">
-              <a href="#">Nosotros</a>
+            <Link 
+                        className={`${location.pathname === '/Nosotros' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} 
+                        to="/Nosotros">Nosotros</Link>
             </li>
           </ul>
         </div>
@@ -65,6 +73,7 @@ const NavBar = () => {
         </div>
       </div>
     </nav>
+    
   );
 };
 
