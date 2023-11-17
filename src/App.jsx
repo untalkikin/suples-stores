@@ -41,10 +41,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Nosotros" element={<Nosotros />} />
-        <Route
-          path="/Contenedor"
-          element={<ItemListContainers greeting={"Hola mundo"} />}
-        />
+        <Route path="/Contenedor" element={<ItemListContainers greeting={"Hola mundo"} />} />
       </Routes>
     </Router>
   );

@@ -53,7 +53,9 @@ const NavBar = () => {
         <div className="flex items-center justify-between">
           <ul className="flex items-center gap-1 py-2 text-lg">
             <li className="px-6 hover:text-cyan-600">
-              <a href="#">Tienda</a>
+            <NavLink 
+                        className={`${location.pathname === '/Contenedor' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} 
+                        to="/Contenedor">Contenedor</NavLink>
             </li>
           </ul>
         </div>
