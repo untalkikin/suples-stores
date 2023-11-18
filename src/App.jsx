@@ -11,9 +11,9 @@ function App() {
     <Router>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Nosotros" element={<Nosotros />} />
-        <Route path="/Contenedor" element={<ItemListContainers />} />
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/Nosotros" element={<Nosotros />} />
+        <Route exact path="/Contenedor" element={<ItemListContainers />} />
       </Routes>
     </Router>
   );
