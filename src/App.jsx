@@ -4,6 +4,7 @@ import NavBar from './components/NavBar'
 import ItemListContainers from './components/ItemListContainer'
 import Home from './components/Home'
 import Nosotros from './components/Nosotros'
+import Categories from './components/Categories'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Nosotros" element={<Nosotros />} />
+        <Route eaxt path="/Categorias" element={<Categories/>}/>
         <Route exact path="/Contenedor" element={<ItemListContainers />} />
       </Routes>
     </Router>
