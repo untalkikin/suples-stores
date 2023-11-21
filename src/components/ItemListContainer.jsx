@@ -1,7 +1,13 @@
 import React from "react";
+import { NavLink } from "react-router-dom"
 import Footer from "./Footer";
 
+
+
+
 function ItemListContainers() {
+  //const { Categoria } = useParams();
+
   const productos = [
     {
       id: 1,
@@ -73,6 +79,8 @@ function ItemListContainers() {
       console.log(error);
     });
 
+   
+  
   return (
     <>
       <section className="py-10 bg-gray-300 relative">
@@ -91,7 +99,8 @@ function ItemListContainers() {
                   <h4>Product</h4>
                 </div>
                 <p className="text-xl mt-3">{producto.titulo}</p>
-                <p className="text-l mt-3">{producto.Categoria}</p>
+                <p className="text-l mt-3">Categoria: {producto.Categoria}</p>
+                <button className="btn-primary"><NavLink to={`/Producto/${producto.id}`}>Ver detalles del prodcuto</NavLink></button>
               </div>
             ))}
           </div>
