@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import Footer from "./Footer";
 
 
@@ -100,7 +100,7 @@ function ItemListContainers() {
                 </div>
                 <p className="text-xl mt-3">{producto.titulo}</p>
                 <p className="text-l mt-3">Categoria: {producto.Categoria}</p>
-                <button className="btn-primary"><NavLink to={`/Producto/${producto.id}`}>Ver detalles del prodcuto</NavLink></button>
+                <button className="btn-primary"><Link to={`/Producto/${producto.id}`} >Ver detalles del prodcuto</Link></button>
               </div>
             ))}
           </div>
