@@ -61,9 +61,8 @@ const NavBar = () => {
             <li className="px-6 hover:text-cyan-600">
               <Menu as="div" className="relative inline-block text-left">
                 <div>
-                  <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                  <Menu.Button className={`${location.pathname === '/Categorias' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}>
                     Categorias
-                    <ChevronDownIcon className="-mr-1 h-5 w-5 text-gray-400" aria-hidden="true" />
                   </Menu.Button>
                 </div>
 
@@ -79,59 +78,17 @@ const NavBar = () => {
                   <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
                     <div className="py-1">
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                              'block px-4 py-2 text-sm'
-                            )}
-                          >
-                            Account settings
-                          </a>
-                        )}
+                            <NavLink className={`${location.pathname === '/Categoria/Proteinas' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Proteinas'>Proteinas</NavLink>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                              'block px-4 py-2 text-sm'
-                            )}
-                          >
-                            Support
-                          </a>
-                        )}
+                             <NavLink className={`${location.pathname === '/Categoria/Pre_entrenos' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Pre_entrenos'>Pre entrenos</NavLink>
                       </Menu.Item>
                       <Menu.Item>
-                        {({ active }) => (
-                          <a
-                            href="#"
-                            className={classNames(
-                              active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                              'block px-4 py-2 text-sm'
-                            )}
-                          >
-                            License
-                          </a>
-                        )}
+                             <NavLink className={`${location.pathname === '/Categoria/Vitaminas' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Vitaminas'>Vitaminas</NavLink>
                       </Menu.Item>
-                      <form method="POST" action="#">
-                        <Menu.Item>
-                          {({ active }) => (
-                            <button
-                              type="submit"
-                              className={classNames(
-                                active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
-                                'block w-full px-4 py-2 text-left text-sm'
-                              )}
-                            >
-                              Sign out
-                            </button>
-                          )}
-                        </Menu.Item>
-                      </form>
+                      <Menu.Item>
+                              <NavLink  className={`${location.pathname === '/Categoria/Creatinas' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Creatinas'>Creatinas</NavLink>
+                      </Menu.Item>
                     </div>
                   </Menu.Items>
                 </Transition>

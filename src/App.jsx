@@ -1,12 +1,12 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import NavBar from './components/NavBar'
-import ItemListContainers from './components/ItemListContainer'
+import ItemListContainer from './components/ItemListContainer'
 import Home from './components/Home'
 import Nosotros from './components/Nosotros'
-import Categories from './components/Categories'
+import ItemDetailContainer from './components/ItemDetailContainer'
 import Carrito from './components/Carrito'
-import ProductDetail from './components/ProductDetail'
+
 
 function App() {
 
@@ -16,10 +16,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/Nosotros" element={<Nosotros />} />
-        <Route eaxt path="/Categorias" element={<Categories/>}/>
-        <Route eaxt path="/Categorias/:Categoria" element={<Categories/>}/>
-        <Route exact path="/Productos" element={<ItemListContainers />} />
-        <Route exact path="/Producto/:id" element={<ProductDetail />} />
+        <Route exact path="/Categorias" element={<ItemListContainer/>} />
+        <Route exact path="/Categoria/:idCategoria" element={<ItemListContainer/>}/>
+        <Route exact path="/Productos" element={<ItemListContainer/>} />
+        <Route exact path="/item/:idItem" element={<ItemDetailContainer/>}/>
         <Route exact path="/Carrito" element={<Carrito/>}/>
       </Routes>
     </Router>
