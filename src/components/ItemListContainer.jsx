@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
-import { getProductos, getProdByCat } from "../prods";
+import { db } from "../firebase/config";
+import { collection, getDocs, query, where } from 'firebase/firestore';
+import Swal from "sweetalert2";
 import Footer from "./Footer";
 import ItemList from "./ItemList";
 
@@ -10,24 +12,40 @@ import ItemList from "./ItemList";
 function ItemListContainer() {
   const [productos, setProductos] = useState([]);
 
-  const { idCategoria } = useParams();
+
+  const [loader, setLoader] = useState(true);
+
+  const idCategoria = useParams().idCategoria;
 
   useEffect(() => {
+    const showProducts = idCategoria ? query(collection(db, "suplementos"), where("Categoria", "==", idCategoria)) : collection(db, "suplementos");
 
-    const funcionProductos = idCategoria ? getProdByCat : getProductos;
+    const loadingSwal = Swal.fire({
+      title: "Buscando productos",
+      didOpen: () => {
+        Swal.showLoading();
+      },
+    });
 
-    funcionProductos(idCategoria)
-      .then(res => setProductos(res))
+      getDocs(showProducts)
+        .then((resp) => {
+        setProductos(resp.docs.map((doc) => { return { ...doc.data(), id: doc.id } }))
+      })
+        .catch(error => console.log(error))
+        .finally(() => {
+          loadingSwal.close();
+          setLoader(false);
+        })
+    }, [idCategoria])
 
-  }, [idCategoria])
-  return (
-    <>
-      <div>
-        <ItemList productos={productos} />
-      </div>
-      <Footer />
-    </>
-  );
-}
+    return (
+      <>
+        <div>
+          <ItemList productos={productos} />
+        </div>
+        <Footer />
+      </>
+    );
+  }
 
 export default ItemListContainer;

@@ -3,6 +3,7 @@ import strongMan from "../assets/images/cbum.png"
 import Footer from './Footer'
 
 
+
 const Home = () => {
   return (
     <>
