@@ -18,25 +18,25 @@ export const CartProvider = ({ children }) => {
         if (!productoExistente) {
             setCarrito(prev => [...prev, { producto, cantidad }]);
             setCantidadTotal(prev => prev + cantidad);
-            setTotal(prev => prev(producto.precio * cantidad));
+            setTotal(prev => prev + (producto.precio * cantidad));
         } else {
             const updatedCart = carrito.map(prod => {
                 if (prod.producto.id === producto.id) {
                     return { ...prod, cantidad: prod.cantidad + cantidad };
-                } else {
+                  } else {
                     return prod;
-                }
+                  }
             })
             setCarrito(updatedCart)
             setCantidadTotal(prev => prev + cantidad);
-            setTotal(prev => prev + (producto.precio * cantidad));
+            setTotal(prev => prev + (producto.precio * cantidad)); 
         }
     }
     const deleteProducto = (id) => {
         const deletedProducto = carrito.find(prod => prod.producto.id === id);
-        const updatedCart = carrito.filter(prod => prod.producto.id !== id);
+        const updateCart = carrito.filter(prod => prod.producto.id !== id);
 
-        setCarrito(updatedCart);
+        setCarrito(updateCart);
         setCantidadTotal(prev => prev - deletedProducto.cantidad);
         setTotal(prev => prev - (deletedProducto.producto.precio * deletedProducto.cantidad))
     }

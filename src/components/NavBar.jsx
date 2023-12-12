@@ -81,7 +81,7 @@ const NavBar = () => {
                             <NavLink className={`${location.pathname === '/Categoria/Proteinas' ? 'text-blue-300' : 'text-blue-200'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Proteinas'>Proteinas</NavLink>
                       </Menu.Item>
                       <Menu.Item>
-                             <NavLink className={`${location.pathname === '/Categoria/Pre_entrenos' ? 'text-blue-300' : 'text-blue-200'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Pre_entrenos'>Pre entrenos</NavLink>
+                             <NavLink className={`${location.pathname === '/Categoria/Pre entrenos' ? 'text-blue-300' : 'text-blue-200'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Pre_entrenos'>Pre entrenos</NavLink>
                       </Menu.Item>
                       <Menu.Item>
                              <NavLink className={`${location.pathname === '/Categoria/Vitaminas' ? 'text-blue-300' : 'text-blue-200'} text-2xl block mt-2 hover:text-blue-300 `} to='/Categoria/Vitaminas'>Vitaminas</NavLink>

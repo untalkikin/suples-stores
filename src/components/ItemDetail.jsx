@@ -13,7 +13,6 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
   const { addCarrito } = useContext(ContextCart);
 
   const manageCantidad = (cantidad) => {
-
     toast.success(`Agregaste ${cantidad} de productos al carrito`, {
       position: "top-center",
       autoClose: 2000,
@@ -25,11 +24,11 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
       theme: "light",
     });
     setAgregarCantidad(cantidad);
-
+  
     const producto = { id, titulo, precio };
     addCarrito(producto, cantidad);
-
-  }
+  };
+  
 
 
   return (
@@ -62,10 +61,15 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
         </div>
         <div className="flex items-center justify-center">
           {
-          agregarCantidad > 0 ? (<Link className="btn-primary" to="/Carrito">Ir al carrito</Link>) : (
-            <div className="btn-primary mt-8 ">
-              <CountItem inicial={1} stock={stock} Functadd={manageCantidad} />
-            </div>)
+            agregarCantidad > 0 ? (
+              <Link className="btn-primary" to="/Carrito">
+                Ir al carrito
+              </Link>
+            ) : (
+              <div className="btn-primary mt-8">
+                <CountItem inicial={1} stock={stock} Functadd={manageCantidad} />
+              </div>
+            )
           }
         </div>
       </section>
