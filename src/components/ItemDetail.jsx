@@ -26,7 +26,7 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
     setAgregarCantidad(cantidad);
   
     const producto = { id, titulo, precio };
-    addCarrito(producto, cantidad);
+    addCarrito(producto, cantidad, stock);
   };
   
 
