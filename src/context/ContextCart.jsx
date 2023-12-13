@@ -23,13 +23,13 @@ export const CartProvider = ({ children }) => {
             const updatedCart = carrito.map(prod => {
                 if (prod.producto.id === producto.id) {
                     return { ...prod, cantidad: prod.cantidad + cantidad };
-                  } else {
+                } else {
                     return prod;
-                  }
+                }
             })
             setCarrito(updatedCart)
             setCantidadTotal(prev => prev + cantidad);
-            setTotal(prev => prev + (producto.precio * cantidad)); 
+            setTotal(prev => prev + (producto.precio * cantidad));
         }
     }
     const deleteProducto = (id) => {
