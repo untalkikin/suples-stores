@@ -11,7 +11,7 @@ const WidgetCarrito = () => {
     <>
     <NavLink
         className={`${location.pathname === '/Carrito' ? 'text-blue-300' : 'text-white'} text-2xl block mt-2 hover:text-blue-300 `}
-        to="/Carrito">Carrito</NavLink>
+        to="/ShopCart">Carrito</NavLink>
       <img src={cart} alt="carrito" />
       {cantidadTotal > 0 && (<h2 className="text-xl font-semibold tracking-tight text-blue-600">{cantidadTotal}</h2>)}
     </>

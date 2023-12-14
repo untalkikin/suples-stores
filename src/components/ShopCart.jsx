@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import ItemCarrito from './ItemCarrito';
 
 
-const Carrito = () => {
+const ShopCart = () => {
 
   const { carrito, emptytCart, total, cantidadTotal } = useContext(ContextCart);
 
@@ -25,15 +25,12 @@ const Carrito = () => {
 
   return (
     <>
-
       <section className="bg-gray-700 relative px-8 rounded-2xl py-5 lg:max-w-4xl mx-auto min-h-[24rem] mt-24  items-center ">
         <div className="text-center">
           <h4 className="text-2xl font-semibold">
             Productos en el carrito
           </h4>
-          {
-            carrito.map(prod => <ItemCarrito key={prod.producto.id} {...prod} />)
-          }
+          {carrito.map(prod => <ItemCarrito key={prod.producto.id} {...prod} />)}
           <p className="text-gray-400 mt-3 text-lg">Total : $ {total}</p>
           <p className="text-gray-400 mt-3 text-lg">Cantidad Total :  {cantidadTotal}</p>
           <div className="flex items-center justify-center">
@@ -43,10 +40,9 @@ const Carrito = () => {
           </div>
         </div>
       </section >
-
     </>
 
   )
 }
 
-export default Carrito
+export default ShopCart

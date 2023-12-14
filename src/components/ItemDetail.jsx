@@ -25,7 +25,7 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
     });
     setAgregarCantidad(cantidad);
   
-    const producto = { id, titulo, precio };
+    const producto = { id, titulo, precio, Categoria, stock };
     addCarrito(producto, cantidad, stock);
   };
   
@@ -62,7 +62,7 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
         <div className="flex items-center justify-center">
           {
             agregarCantidad > 0 ? (
-              <Link className="btn-primary" to="/Carrito">
+              <Link className="btn-primary" to="/ShopCart">
                 Ir al carrito
               </Link>
             ) : (
