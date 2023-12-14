@@ -40,13 +40,13 @@ export const CartProvider = ({ children }) => {
         setCantidadTotal(prev => prev - deletedProducto.cantidad);
         setTotal(prev => prev - (deletedProducto.producto.precio * deletedProducto.cantidad))
     }
-    const emptytCart = () => {
+    const emptyCart = () => {
         setCarrito([]);
         setCantidadTotal(0);
         setTotal(0);
     }
     return (
-        <ContextCart.Provider value={{ carrito, total, cantidadTotal, addCarrito, deleteProducto, emptytCart }}>
+        <ContextCart.Provider value={{ carrito, total, cantidadTotal, addCarrito, deleteProducto, emptyCart }}>
             {children}
         </ContextCart.Provider>
     )
