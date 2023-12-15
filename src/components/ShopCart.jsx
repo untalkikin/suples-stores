@@ -4,9 +4,11 @@ import { Link } from 'react-router-dom';
 import ItemCarrito from './ItemCarrito';
 
 
+
 const ShopCart = () => {
 
-  const { carrito, emptyCart, total, cantidadTotal } = useContext(ContextCart);
+  const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(ContextCart);
+
 
   if (cantidadTotal === 0) {
     return (
@@ -30,11 +32,13 @@ const ShopCart = () => {
           <h4 className="text-2xl font-semibold">
             Productos en el carrito
           </h4>
-          {carrito.map(prod => <ItemCarrito key={prod.producto.id} {...prod}/>)}
+          {
+            carrito.map(prod => <ItemCarrito key={prod.producto.id} {...prod}/>) 
+          }
           <p className="text-gray-400 mt-3 text-lg">Total : $ {total}</p>
           <p className="text-gray-400 mt-3 text-lg">Cantidad Total :  {cantidadTotal}</p>
           <div className="flex items-center justify-center">
-            <button className="btn-primary" onClick={() => emptyCart()}>Vaciar Carrito</button>
+            <button className="btn-primary" onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
             <br />
             <button className="btn-primary"><Link to="/CheckOut">Finalizar compra</Link></button>
           </div>

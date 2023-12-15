@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Route, Routes, BrowserRouter } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import ItemListContainer from './components/ItemListContainer'
 import Home from './components/Home'
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <CartProvider>
-        <Router>
+        <BrowserRouter>
           <NavBar />
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -29,7 +29,7 @@ function App() {
             <Route exact path="/ShopCart" element={<ShopCart />} />
             <Route exact path="/Checkout" element={<CheckOut />} />
           </Routes>
-        </Router>
+        </BrowserRouter>
       </CartProvider>
     </>
   );

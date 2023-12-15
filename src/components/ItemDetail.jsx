@@ -10,7 +10,7 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
 
   const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-  const { addCarrito } = useContext(ContextCart);
+  const {agregarAlCarrito} = useContext (ContextCart);
 
   const manageCantidad = (cantidad) => {
     toast.success(`Agregaste ${cantidad} de productos al carrito`, {
@@ -24,9 +24,9 @@ const ItemDetail = ({ id, titulo, precio, Categoria, descripcion, imagen, stock 
       theme: "light",
     });
     setAgregarCantidad(cantidad);
-  
-    const producto = { id, titulo, precio, Categoria, stock };
-    addCarrito(producto, cantidad, stock);
+
+    const producto ={id, titulo, precio,stock};
+    agregarAlCarrito(producto, cantidad, stock);
   };
   
 
